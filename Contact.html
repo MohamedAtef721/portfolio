@@ -52,8 +52,6 @@
             overflow-x: hidden;
         }
 
-        .hidden { overflow: hidden; }
-
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Roboto Slab', serif;
             color: var(--heading-color);
@@ -62,15 +60,6 @@
 
         a { color: var(--theme-color); transition: filter 0.2s; }
         a:hover { text-decoration: none; color: var(--theme-color); filter: brightness(1.2); }
-
-        /* Preloader */
-        .preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: var(--bg-color); display: flex; justify-content: center;
-            align-items: center; z-index: 9999;
-        }
-        .preloader-logo { font-family: 'Roboto Slab', serif; font-size: 3rem; color: var(--heading-color); opacity: 0; }
-        .preloader-logo .ma-a { color: var(--theme-color); }
 
         /* Navbar */
         .navbar {
@@ -266,10 +255,7 @@
         }
     </style>
 </head>
-<body class="hidden">
-    <div class="preloader">
-        <div class="preloader-logo"><span class="ma-a">Mohamed </span>Atef</div>
-    </div>
+<body>
 
     <!-- Header -->
     <header>
@@ -406,22 +392,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             gsap.registerPlugin(ScrollTrigger);
             
-            // Preloader Animation
-            const preloaderTl = gsap.timeline();
-            preloaderTl.to('.preloader-logo', { opacity: 1, duration: 0.5 })
-                       .to('.preloader', { y: '-100%', duration: 1, delay: 1, onComplete: startMainAnimations });
-
-            function startMainAnimations() {
-                document.body.classList.remove('hidden');
-                
-                // Fade in animations
-                gsap.utils.toArray('.g-fade-in-up').forEach((el, i) => {
-                    gsap.from(el, { 
-                        scrollTrigger: { trigger: el, start: 'top 90%' },
-                        opacity: 0, y: 30, duration: 0.8, delay: i * 0.1 
-                    });
+            // Fade in animations (start immediately since preloader is gone)
+            gsap.utils.toArray('.g-fade-in-up').forEach((el, i) => {
+                gsap.from(el, { 
+                    scrollTrigger: { trigger: el, start: 'top 90%' },
+                    opacity: 0, y: 30, duration: 0.8, delay: i * 0.1 
                 });
-            }
+            });
 
             // Theme Toggle
             const themeToggle = document.getElementById('theme-toggle');
@@ -443,17 +420,14 @@
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Change button state
                 btnText.innerText = "Sending...";
                 submitBtn.disabled = true;
 
-                // Prepare form data
                 const formData = new FormData(this);
                 const object = {};
                 formData.forEach((value, key) => object[key] = value);
                 const json = JSON.stringify(object);
 
-                // Send to FormSubmit
                 fetch("https://formsubmit.co/ajax/mohamedatef.engineer@gmail.com", {
                     method: "POST",
                     headers: { 
@@ -465,13 +439,11 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success === "true") {
-                        // Success state
                         submitBtn.style.background = "#22c55e";
                         btnText.innerText = "Message Sent!";
                         submitBtn.querySelector('i').className = "fas fa-check-circle ml-2";
                         contactForm.reset();
                         
-                        // Reset button after 3 seconds
                         setTimeout(() => {
                             submitBtn.style.background = "";
                             btnText.innerText = "Send Message";
@@ -479,7 +451,6 @@
                             submitBtn.disabled = false;
                         }, 3000);
                     } else {
-                        // Error state
                         btnText.innerText = "Error! Try Again";
                         submitBtn.disabled = false;
                     }
