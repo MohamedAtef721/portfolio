@@ -391,14 +391,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             gsap.registerPlugin(ScrollTrigger);
-            
-            // Fade in animations (start immediately)
-            gsap.utils.toArray('.g-fade-in-up').forEach((el, i) => {
-                gsap.from(el, { 
-                    scrollTrigger: { trigger: el, start: 'top 90%' },
-                    opacity: 0, y: 30, duration: 0.8, delay: i * 0.1 
-                });
-            });
 
             // Theme Toggle
             const themeToggle = document.getElementById('theme-toggle');
@@ -412,6 +404,14 @@
             });
             applyTheme(localStorage.getItem('theme') || 'light');
 
+            // GSAP Animations
+            gsap.utils.toArray('.g-fade-in-up').forEach((el, i) => {
+                gsap.from(el, { 
+                    scrollTrigger: { trigger: el, start: 'top 90%' },
+                    opacity: 0, y: 30, duration: 0.8, delay: i * 0.1 
+                });
+            });
+
             // Form Submission Handler
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
@@ -420,14 +420,17 @@
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
+                // Change button state
                 btnText.innerText = "Sending...";
                 submitBtn.disabled = true;
 
+                // Prepare form data
                 const formData = new FormData(this);
                 const object = {};
                 formData.forEach((value, key) => object[key] = value);
                 const json = JSON.stringify(object);
 
+                // Send to FormSubmit
                 fetch("https://formsubmit.co/ajax/mohamedatef.engineer@gmail.com", {
                     method: "POST",
                     headers: { 
@@ -439,11 +442,13 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success === "true") {
+                        // Success state
                         submitBtn.style.background = "#22c55e";
                         btnText.innerText = "Message Sent!";
                         submitBtn.querySelector('i').className = "fas fa-check-circle ml-2";
                         contactForm.reset();
                         
+                        // Reset button after 3 seconds
                         setTimeout(() => {
                             submitBtn.style.background = "";
                             btnText.innerText = "Send Message";
@@ -451,6 +456,7 @@
                             submitBtn.disabled = false;
                         }, 3000);
                     } else {
+                        // Error state
                         btnText.innerText = "Error! Try Again";
                         submitBtn.disabled = false;
                     }
