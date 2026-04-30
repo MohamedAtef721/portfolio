@@ -7,7 +7,6 @@
     <meta name="author" content="Mohamed Atef">
     <meta name="description" content="Get in touch with Mohamed Atef - Data Scientist & Analyst for freelance projects and collaborations.">
 
-    <!-- Stylesheets and Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +16,6 @@
 
     <style>
         :root {
-            /* Light Mode */
             --bg-color: #f5f7ff;
             --text-color: #475569;
             --heading-color: rgb(0, 0, 0);
@@ -31,7 +29,6 @@
         }
 
         html[data-theme='dark'] {
-            /* Dark Mode */
             --bg-color: #0f0f2a; 
             --text-color: #94a3b8;
             --heading-color: #f8fafc;
@@ -61,7 +58,6 @@
         a { color: var(--theme-color); transition: filter 0.2s; }
         a:hover { text-decoration: none; color: var(--theme-color); filter: brightness(1.2); }
 
-        /* Navbar */
         .navbar {
             background-color: var(--navbar-bg-color);
             backdrop-filter: blur(10px);
@@ -73,7 +69,6 @@
         .nav-link { font-weight: 500; color: var(--text-color) !important; }
         .nav-item.active .nav-link { color: var(--theme-color) !important; font-weight: 700; }
 
-        /* Theme Toggle Button */
         .theme-toggle-btn {
             background: transparent; border: 1px solid var(--card-border-color); color: var(--heading-color);
             width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center;
@@ -83,7 +78,6 @@
         html[data-theme='dark'] .theme-toggle-btn .fa-sun { display: block; }
         html[data-theme='dark'] .theme-toggle-btn .fa-moon { display: none; }
 
-        /* Contact Wrapper */
         .contact-wrapper {
             background: var(--card-bg-color);
             border: 1px solid var(--card-border-color);
@@ -103,7 +97,6 @@
         }
         .contact-form-side { padding: 3rem; }
 
-        /* Form Styling */
         .form-group label { font-weight: 600; color: var(--heading-color); font-size: 0.9rem; margin-bottom: 0.5rem; }
         .form-control {
             background-color: var(--bg-color);
@@ -120,11 +113,7 @@
             box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
             outline: none;
         }
-        
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
+        textarea.form-control { resize: vertical; min-height: 120px; }
 
         .btn-send {
             background: var(--accent-gradient);
@@ -143,12 +132,8 @@
             box-shadow: 0 15px 25px rgba(139, 92, 246, 0.4); 
             color: white; 
         }
-        .btn-send:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+        .btn-send:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-        /* Info Icons */
         .info-item { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
         .info-icon {
             width: 50px; height: 50px;
@@ -159,7 +144,6 @@
             flex-shrink: 0;
         }
 
-        /* Social Section */
         .social { text-align: center; padding: 3rem 0; }
         
         .contact-title {
@@ -170,7 +154,6 @@
             position: relative;
             display: inline-block;
         }
-
         .contact-title::after {
             content: '';
             display: block;
@@ -186,7 +169,6 @@
         .contact-icons a:hover { transform: translateY(-5px); color: var(--theme-color); }
         .contact-icons img { height: 35px; width: auto; }
 
-        /* Footer */
         footer { 
             padding: 1.5rem 0; 
             text-align: center; 
@@ -203,77 +185,36 @@
                 margin-top: 15px;
                 box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             }
-
-            .navbar-nav {
-                align-items: flex-start !important; 
-            }
-
-            .nav-item {
-                margin-bottom: 15px;
-            }
-
-            .nav-link {
-                font-size: 1.6rem !important; 
-                font-weight: 700 !important;
-                padding: 0 !important;
-                color: var(--text-color) !important;
-            }
-
-            .nav-item.active .nav-link {
-                color: var(--theme-color) !important;
-            }
-
-            .theme-mobile-container {
-                width: 100%;
-                margin-top: 20px;
-                padding-top: 25px;
-                border-top: 1px solid var(--card-border-color); 
-            }
-
-            .theme-toggle-btn {
-                margin-left: 0 !important;
-                border: 1px solid var(--card-border-color);
-                width: 45px;
-                height: 45px;
-            }
-            
-            .contact-info-side {
-                padding: 2rem;
-            }
-            
-            .contact-form-side {
-                padding: 2rem;
-            }
+            .navbar-nav { align-items: flex-start !important; }
+            .nav-item { margin-bottom: 15px; }
+            .nav-link { font-size: 1.6rem !important; font-weight: 700 !important; padding: 0 !important; color: var(--text-color) !important; }
+            .nav-item.active .nav-link { color: var(--theme-color) !important; }
+            .theme-mobile-container { width: 100%; margin-top: 20px; padding-top: 25px; border-top: 1px solid var(--card-border-color); }
+            .theme-toggle-btn { margin-left: 0 !important; border: 1px solid var(--card-border-color); width: 45px; height: 45px; }
+            .contact-info-side { padding: 2rem; }
+            .contact-form-side { padding: 2rem; }
         }
 
         @media (min-width: 992px) {
-            .theme-mobile-container {
-                margin-left: 15px;
-                display: flex;
-                align-items: center;
-            }
+            .theme-mobile-container { margin-left: 15px; display: flex; align-items: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="./index.html">Mohamed Atef</a>
-            
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                     <i class="fas fa-bars" style="color: var(--heading-color);"></i>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="./index.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="./Projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="./services.html">Services</a></li>
                         <li class="nav-item active"><a class="nav-link" href="./Contact.html">Contact</a></li>
-                    
                         <li class="nav-item theme-mobile-container">
                             <button class="theme-toggle-btn" id="theme-toggle">
                                 <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
@@ -293,11 +234,9 @@
 
         <div class="contact-wrapper g-fade-in-up">
             <div class="row no-gutters">
-                <!-- Left Side: Info -->
                 <div class="col-lg-5">
                     <div class="contact-info-side">
                         <h3 class="mb-5 text-white" style="font-family: 'Roboto Slab', serif;">Contact Information</h3>
-                        
                         <div class="info-item">
                             <div class="info-icon"><i class="fas fa-envelope"></i></div>
                             <div>
@@ -305,7 +244,6 @@
                                 <h6 class="mb-0">mohamedatef.engineer@gmail.com</h6>
                             </div>
                         </div>
-
                         <div class="info-item">
                             <div class="info-icon"><i class="fas fa-phone"></i></div>
                             <div>
@@ -313,7 +251,6 @@
                                 <h6 class="mb-0">+20 1099532798</h6>
                             </div>
                         </div>
-
                         <div class="info-item">
                             <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
@@ -324,10 +261,12 @@
                     </div>
                 </div>
 
-                <!-- Right Side: Form -->
                 <div class="col-lg-7">
                     <div class="contact-form-side">
                         <form id="contactForm" action="https://formsubmit.co/mohamedatef.engineer@gmail.com" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_subject" value="New Message From Portfolio">
 
                             <div class="row">
                                 <div class="col-md-6 form-group mb-4">
@@ -347,13 +286,10 @@
                                 <label>Message</label>
                                 <textarea name="message" class="form-control" rows="5" placeholder="How can I help you?" required></textarea>
                             </div>
-                            
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_subject" value="New Message From Portfolio">
 
                             <button type="submit" id="submitBtn" class="btn btn-send">
-                                <span id="btnText">Send Message</span> <i class="fas fa-paper-plane ml-2"></i>
+                                <span id="btnText">Send Message</span>
+                                <i id="btnIcon" class="fas fa-paper-plane ml-2"></i>
                             </button>
                         </form>
                     </div>
@@ -362,7 +298,6 @@
         </div>
     </div>
 
-    <!-- Social Links -->
     <div class="social g-fade-in">
         <h4 class="contact-title g-fade-in-up">Quick Connect</h4>
         <div class="contact-icons">
@@ -375,14 +310,12 @@
         <div class="contact-note">Always Open to collaborations, freelance projects, and exciting data opportunities.</div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© Copyright 2026 Mohamed Atef. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -412,58 +345,49 @@
                 });
             });
 
-            // Form Submission Handler
+            // ✅ Form Handler
             const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
+            const submitBtn   = document.getElementById('submitBtn');
+            const btnText     = document.getElementById('btnText');
+            const btnIcon     = document.getElementById('btnIcon');
 
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
-                // Change button state
+
+                // Loading state
                 btnText.innerText = "Sending...";
+                btnIcon.className = "fas fa-spinner fa-spin ml-2";
                 submitBtn.disabled = true;
 
-                // Prepare form data
+                // Collect form data
                 const formData = new FormData(this);
                 const object = {};
                 formData.forEach((value, key) => object[key] = value);
-                const json = JSON.stringify(object);
 
-                // Send to FormSubmit
                 fetch("https://formsubmit.co/ajax/mohamedatef.engineer@gmail.com", {
                     method: "POST",
-                    headers: { 
+                    headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-                    body: json
+                    body: JSON.stringify(object)
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.success === true) {
-                        // Success state
-                        submitBtn.style.background = "#22c55e";
-                        btnText.innerText = "Message Sent!";
-                        submitBtn.querySelector('i').className = "fas fa-check-circle ml-2";
-                        contactForm.reset();
-                        
-                        // Reset button after 3 seconds
-                        setTimeout(() => {
-                            submitBtn.style.background = "";
-                            btnText.innerText = "Send Message";
-                            submitBtn.querySelector('i').className = "fas fa-paper-plane ml-2";
-                            submitBtn.disabled = false;
-                        }, 3000);
+                    // ✅ FormSubmit بيرجع "true" string
+                    if (data.success === "true" || data.success === true) {
+                        // ✅ روح لصفحة Thank You
+                        window.location.href = "thankyou.html";
                     } else {
-                        // Error state
                         btnText.innerText = "Error! Try Again";
+                        btnIcon.className = "fas fa-paper-plane ml-2";
                         submitBtn.disabled = false;
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     btnText.innerText = "Error! Try Again";
+                    btnIcon.className = "fas fa-paper-plane ml-2";
                     submitBtn.disabled = false;
                 });
             });
