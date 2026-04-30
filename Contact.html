@@ -374,10 +374,10 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    // ✅ FormSubmit بيرجع "true" string
+                    // ✅ FormSubmit "true" string
                     if (data.success === "true" || data.success === true) {
-                        // ✅ روح لصفحة Thank You
-                        window.location.href = "thankyou.html";
+                        // ✅Thank You
+                        window.location.href = "ThankYou.html";
                     } else {
                         btnText.innerText = "Error! Try Again";
                         btnIcon.className = "fas fa-paper-plane ml-2";
