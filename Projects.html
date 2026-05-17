@@ -62,8 +62,20 @@
             padding: 0.75rem 1rem;
         }
         .navbar-brand { font-family: 'Roboto Slab', serif; font-size: 1.5rem; color: var(--heading-color) !important; }
-        .nav-link { font-weight: 500; color: var(--text-color) !important; }
+        .nav-link { font-weight: 500; color: var(--text-color) !important; position: relative; padding-bottom: 4px !important; }
         .nav-item.active .nav-link { color: var(--theme-color) !important; font-weight: 700; }
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 50%; right: 50%;
+    height: 2px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+    transition: left 0.3s ease, right 0.3s ease;
+}
+.nav-item.active .nav-link::after,
+.nav-link:hover::after { left: 0; right: 0; }
         
         /* Theme Toggle Button */
         .theme-toggle-btn {
@@ -293,7 +305,27 @@
         
         <div class="Project-grid" id="projectsContainer">
 
-            <!-- Project Card 1 -->
+           <!-- Project Card 1 -->
+            <a href="https://github.com/MohamedAtef721/Airline-Performance-Delay-Analysis-Dashboard" target="_blank" class="project-card-link project-item g-fade-in-up">
+                <div class="project-card">
+                    <img class="project-image" src="icons/Airline Performance & Delay Analysis Dashboard.png" alt="Airline Performance Dashboard">
+                    <div class="project-content">
+                        <h4 class="project-card-title"> ✈️ Airline Performance & Delay Analysis Dashboard (Power BI)</h4>
+                        <p class="project-description">Developed an interactive Power BI dashboard analyzing over 1.9M flights, including 177K early and 35K on-time flights. Performed data cleaning using Power Query, designed a star schema model, and implemented DAX measures to track delay rates, cancellations, and time-based trends.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power Bi</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Dashboard</span>
+                            <span class="tech-tag">ETL</span>
+                            <span class="tech-tag">Business Intelligence</span>
+                            <span class="tech-tag">Star Schema</span>
+                            <span class="tech-tag">DAX</span>
+                        </div>
+                        <div class="project-links"><span class="project-link"><i class="fab fa-github"></i> View on GitHub</span></div>
+                    </div>
+                </div>
+            </a>
+              <!-- Project Card 2 -->
             <a href="https://github.com/MohamedAtef721/Sales-Dashboard-Power-BI-" target="_blank" class="project-card-link project-item g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Sales Dashboard - Power BI (AdventureWorks).png" alt="Sales Analysis Dashboard">
@@ -315,7 +347,7 @@
             </a>
 
 
-             <!-- Project Card 2 -->
+             <!-- Project Card 3 -->
             <a href="https://github.com/MohamedAtef721/AdventureWorks-Sales-Analysis-Power-bi-Dashboard" target="_blank" class="project-card-link project-item g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Sales Analysis Dashboard.png" alt="Sales Analysis Dashboard">
@@ -337,7 +369,7 @@
             </a>
 
 
-             <!-- Project Card 3 -->
+             <!-- Project Card 4 -->
             <a href="https://github.com/MohamedAtef721/Sales-Analysis-Excel-Dashboard" target="_blank" class="project-card-link project-item g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Sales Analysis Dashboard (Excel).png" alt="Sales Analysis Dashboard (Excel)">
@@ -360,7 +392,7 @@
             </a>
 
 
-            <!-- Project Card 4 -->
+            <!-- Project Card 5 -->
             <a href="https://github.com/MohamedAtef721/Smart-Clinic-Management-System" target="_blank" class="project-card-link project-item g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Smart-Clinic-Management-System.png" alt="Clinic Management System">
@@ -383,7 +415,7 @@
             </a>
 
 
-           <!-- Project Card 5 -->
+           <!-- Project Card 6 -->
             <a href="https://github.com/MohamedAtef721/Movies-Analysis" target="_blank" class="project-card-link project-item g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Red Black Modern Cinema Movie Presentation.jpg" alt="Movie Analysis">
@@ -408,8 +440,8 @@
             </a>
 
 
-            <!-- Project Card 6 -->
-             <a href="https://github.com/MohamedAtef721/Books-Sales-EDA-Visualization" target="_blank" class="project-card-link project-item g-fade-in-up">
+            <!-- Project Card 7 -->
+             <a href="https://github.com/MohamedAtef721/Books-Sales-EDA-Visualization" target="_blank" class="project-card-link project-item project-item-hidden g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Books Sales & Ratings Analysis.jpg" alt="Books Analysis">
                     <div class="project-content">
@@ -429,7 +461,7 @@
             </a>
 
 
-            <!-- Project Card 7 -->
+            <!-- Project Card 8 -->
             <a href="https://github.com/MohamedAtef721/Telecom-Management-System-sql-Project" target="_blank" class="project-card-link project-item project-item-hidden g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Telecom-Management-System-sql.jpg" alt="SQL Project">
@@ -452,7 +484,7 @@
             </a>
 
 
-            <!-- Project Card 8 -->
+            <!-- Project Card 9 -->
             <a href="https://github.com/MohamedAtef721/E-Commerce-Analytics" target="_blank" class="project-card-link project-item project-item-hidden g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/E-Commerce Analytics (2).jpg" alt="E-Commerce">
@@ -475,7 +507,7 @@
             </a>
             
 
-            <!-- Project Card 9 -->
+            <!-- Project Card 10 -->
             <a href="https://github.com/MohamedAtef721/Car-Price-Prediction" target="_blank" class="project-card-link project-item project-item-hidden g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Car Price Prediction (1).jpg" alt="ML Project">
@@ -499,7 +531,7 @@
             </a>
 
 
-            <!-- Project Card 10  -->
+            <!-- Project Card 11  -->
             <a href="https://github.com/MohamedAtef721/Diabetes-Prediction" target="_blank" class="project-card-link project-item project-item-hidden g-fade-in-up">
                 <div class="project-card">
                     <img class="project-image" src="icons/Diabetes.jpg" alt="Health Analysis">
@@ -523,11 +555,7 @@
                 </div>
             </a>
 
-
-
-            
         </div>
-        
         <!-- Load More Button -->
         <div class="load-more-container">
             <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreProjects()">
